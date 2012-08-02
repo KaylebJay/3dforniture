@@ -30,137 +30,150 @@
    
 ]]--
 
+-- Deco Home
 
---mesa
-minetest.register_craft( {
-	output = '3dforniture:table', '3dforniture:chair 2',
-	recipe = {
-		{ 'default:wood','default:wood', 'default:wood' },
-		{ 'default:stick', '', 'default:stick' },
-	},
-})
+	--Table
+	minetest.register_craft( {
+		output = '3dforniture:table', '3dforniture:chair 2',
+		recipe = {
+			{ 'default:wood','default:wood', 'default:wood' },
+			{ 'default:stick', '', 'default:stick' },
+		},
+	})
 
---silla
-minetest.register_craft( {
-	output = '3dforniture:chair 2',
-	recipe = {
-		{ 'default:stick',''},
-		{ 'default:wood','default:wood' },
-		{ 'default:stick','default:stick' },
-	},
-})
+	minetest.register_craft({
+		type = 'fuel',
+		recipe = '3dforniture:table',
+		burntime = 30,
+	})
 
---sillón
-minetest.register_craft( {
-	output = '3dforniture:armchair 2',
-	recipe = {
-		{ 'default:wood',''},
-		{ 'default:wood','default:wood' },
-		{ 'default:wood','default:wood' },
-	},
-})
+	--Chair
+	minetest.register_craft( {
+		output = '3dforniture:chair 2',
+		recipe = {
+			{ 'default:stick',''},
+			{ 'default:wood','default:wood' },
+			{ 'default:stick','default:stick' },
+		},
+	})
 
---barrotes
-minetest.register_craft( {
-	output = '3dforniture:bars 10',
-	recipe = {
-		{ 'default:steel_ingot','default:steel_ingot','default:steel_ingot' },
-		{ 'default:steel_ingot','default:steel_ingot','default:steel_ingot' },
-	},
-})
+	minetest.register_craft({
+		type = 'fuel',
+		recipe = '3dforniture:chair',
+		burntime = 15,
+	})
 
--- union en L de barrotes
-minetest.register_craft( {
-	output = '3dforniture:L_binding_bars 4',
-	recipe = {
-		{ '3dforniture:bars','' },
-		{ '3dforniture:bars','3dforniture:bars' },
-	},
-})
+	--Armchair
+	minetest.register_craft( {
+		output = '3dforniture:armchair 2',
+		recipe = {
+			{ 'default:wood',''},
+			{ 'default:wood','default:wood' },
+			{ 'default:wood','default:wood' },
+		},
+	})
 
---cadenas
-minetest.register_craft( {
-	output = '3dforniture:chains 4',
-	recipe = {
-		{'','default:steel_ingot',''},
-		{ 'default:steel_ingot','', 'default:steel_ingot' },
-		{ '', 'default:steel_ingot', '' },
-	},
-})
+	minetest.register_craft({
+		type = 'fuel',
+		recipe = '3dforniture:armchair',
+		burntime = 30,
+	})
 
---antorcha de pared
-minetest.register_craft( {
-	output = '3dforniture:torch_wall 10',
-	recipe = {
-		{ 'default:coal_lump' },
-		{ 'default:steel_ingot' },
-	},
-})
+	--Table Lamp
+	minetest.register_craft( {
+		output = '3dforniture:table_lamp_off',
+		recipe = {
+			{'default:paper','default:torch' ,'default:paper'},
+			{'','default:stick',''},
+			{'','stairs:slab_wood',''},
+		},
+	})
 
---retrete
-minetest.register_craft( {
-	output = '3dforniture:toilet',
-	recipe = {
-		{'','','bucket:bucket_water'},
-		{ 'default:cobble','default:cobble', 'default:cobble' },
-		{ '', 'bucket:bucket_empty', '' },
-	},
-})
+	minetest.register_craft({
+		type = 'fuel',
+		recipe = '3dforniture:table_lamp_off',
+		burntime = 10,
+	})
 
---lavabo
-minetest.register_craft( {
-	output = '3dforniture:sink',
-	recipe = {
-		{ 'default:cobble','bucket:bucket_empty', 'default:cobble' },
-	},
-})
+	-- Bathroom Kit
 
---grifos
-minetest.register_craft( {
-	output = '3dforniture:taps',
-	recipe = {
-		{ 'default:steel_ingot','bucket:bucket_water', 'default:steel_ingot' },
-	},
-})
+		--Toilet
+		minetest.register_craft( {
+			output = '3dforniture:toilet',
+			recipe = {
+				{'','','bucket:bucket_water'},
+				{ 'default:cobble','default:cobble', 'default:cobble' },
+				{ '', 'bucket:bucket_empty', '' },
+			},
+		})
 
---plato de ducha
-minetest.register_craft( {
-	output = '3dforniture:shower_tray',
-	recipe = {
-		{ 'default:cobble','bucket:bucket_water', 'default:cobble' },
-	},
-})
+		--Sink
+		minetest.register_craft( {
+			output = '3dforniture:sink',
+			recipe = {
+				{ 'default:cobble','bucket:bucket_empty', 'default:cobble' },
+			},
+		})
 
---alcachofa de ducha
-minetest.register_craft( {
-	output = '3dforniture:shower_head',
-	recipe = {
-		{'default:steel_ingot', 'bucket:bucket_water'},
-	},
-})
+		--Taps
+		minetest.register_craft( {
+			output = '3dforniture:taps',
+			recipe = {
+				{ 'default:steel_ingot','bucket:bucket_water', 'default:steel_ingot' },
+			},
+		})
 
---lampara de mesa
-minetest.register_craft( {
-	output = '3dforniture:table_lamp_off',
-	recipe = {
-		{'default:paper','default:torch' ,'default:paper'},
-		{'','default:stick',''},
-		{'','stairs:slab_wood',''},
-	},
-})
+		--Shower Tray
+		minetest.register_craft( {
+			output = '3dforniture:shower_tray',
+			recipe = {
+				{ 'default:cobble','bucket:bucket_water', 'default:cobble' },
+			},
+		})
 
---fuel
+		--Shower Head
+		minetest.register_craft( {
+			output = '3dforniture:shower_head',
+			recipe = {
+				{'default:steel_ingot', 'bucket:bucket_water'},
+			},
+		})
 
---mesa
-minetest.register_craft({
-	type = 'fuel',
-	recipe = '3dforniture:table',
-	burntime = 30,
-})
+-- Medieval Forniture
 
---silla
-minetest.register_craft({
-	type = 'fuel',
-	recipe = '3dforniture:chair',
-	burntime = 15,
-})
+	--Bars
+	minetest.register_craft( {
+		output = '3dforniture:bars 10',
+		recipe = {
+			{ 'default:steel_ingot','default:steel_ingot','default:steel_ingot' },
+			{ 'default:steel_ingot','default:steel_ingot','default:steel_ingot' },
+		},
+	})
+
+	-- L Binding Bars
+	minetest.register_craft( {
+		output = '3dforniture:L_binding_bars 4',
+		recipe = {
+			{ '3dforniture:bars','' },
+			{ '3dforniture:bars','3dforniture:bars' },
+		},
+	})
+
+	--Chains
+	minetest.register_craft( {
+		output = '3dforniture:chains 4',
+		recipe = {
+			{'','default:steel_ingot',''},
+			{ 'default:steel_ingot','', 'default:steel_ingot' },
+			{ '', 'default:steel_ingot', '' },
+		},
+	})
+
+	--Torch Wall
+	minetest.register_craft( {
+		output = '3dforniture:torch_wall 10',
+		recipe = {
+			{ 'default:coal_lump' },
+			{ 'default:steel_ingot' },
+		},
+	})
