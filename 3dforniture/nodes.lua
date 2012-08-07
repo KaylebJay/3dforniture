@@ -449,7 +449,7 @@
 				drawtype = "nodebox",
 				sunlight_propagates = false,
 				paramtype = 'light',
-				paramtype2 == 'facedir',
+				paramtype2 = 'facedir',
 				node_box = {
 					type = "fixed",
 					fixed = {
