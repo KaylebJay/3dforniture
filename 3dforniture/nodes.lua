@@ -468,7 +468,8 @@
 					},
 				},
 				drop = "3dforniture:toilet",
-				groups = {cracky = 3,}
+				groups = {cracky = 3,},
+				sounds = {dig = "3dforniture_dig_toilet",  gain=0.5},
 			})
 
 			--Sink
