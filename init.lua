@@ -39,6 +39,7 @@
 dofile(minetest.get_modpath("3dforniture").."/crafting.lua")
 dofile(minetest.get_modpath("3dforniture").."/nodes.lua")
 
+--[[
 --alias
 minetest.register_alias('table', '3dforniture:table')
 minetest.register_alias('chair', '3dforniture:chair')
@@ -53,40 +54,4 @@ minetest.register_alias('shower_tray', '3dforniture:shower_tray')
 minetest.register_alias('shower_head', '3dforniture:shower_head')
 minetest.register_alias('table_lamp', '3dforniture:table_lamp_off')
 minetest.register_alias('armchair', '3dforniture:armchair')
-
---function
-
-local on_lamp_puncher = function (pos, node, puncher)
-	if node.name == "3dforniture:table_lamp_off" then
-		minetest.env:add_node(pos, {name="3dforniture:table_lamp_low"})
-		nodeupdate(pos)
-	elseif node.name == "3dforniture:table_lamp_low" then
-		minetest.env:add_node(pos, {name="3dforniture:table_lamp_med"})
-		nodeupdate(pos)
-	elseif node.name == "3dforniture:table_lamp_med" then
-		minetest.env:add_node(pos, {name="3dforniture:table_lamp_hi"})
-		nodeupdate(pos)
-	elseif node.name == "3dforniture:table_lamp_hi" then
-		minetest.env:add_node(pos, {name="3dforniture:table_lamp_max"})
-		nodeupdate(pos)
-	elseif node.name == "3dforniture:table_lamp_max" then
-		minetest.env:add_node(pos, {name="3dforniture:table_lamp_off"})
-		nodeupdate(pos)
-    end
-end
-
-
-local on_toilet_puncher = function (pos, node, puncher)
-  if node.name == '3dforniture:toilet' then
-    local dir = node["param2"]
-    minetest.env:add_node(pos, {name="3dforniture:toilet_open", paramtype2='none', param2=dir})
-    nodeupdate(pos)
-  elseif node.name == '3dforniture:toilet_open' then
-    local dir = node["param2"]
-    minetest.env:add_node(pos, {name="3dforniture:toilet", paramtype2='none', param2=dir})
-    nodeupdate(pos)
-  end
-end
-
-minetest.register_on_punchnode(on_lamp_puncher)
-minetest.register_on_punchnode(on_toilet_puncher)
+--]]
