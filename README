@@ -1,4 +1,24 @@
 
+Note: This code has been adjusted to newer (5.x) versions of Minetest
+      by me (Sokomine). These changes where necessary because the old
+      version of 3dforniture would crash newer games.
+
+Changes:
+      * moved the mod up one level in the file system hierarchy for
+        easier installation
+      * removed HTML crafting guide (no longer necessary)
+      * removed changes to papyrus and trees (such things ought to be done in
+        a seperate mod if desired)
+      * adjusted code so that it no longer crashes in new versions:
+        right-click toilet and table lamp in order to use them (also
+        more consisent with recent changes)
+      * tiny code optimizations
+      * nodes that cannot be crafted (open toilet, lamps in diffrent
+        stages) no longer appear in the creative inventory
+
+Sokomine, 28.09.2019
+
+
  README
 
 ========================================================================

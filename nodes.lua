@@ -1,4 +1,6 @@
 --[[
+   Modifed: 28.09.2019 Sokomine (see README)
+
    3D Forniture
    
    Copyright 2012 Tonyka
